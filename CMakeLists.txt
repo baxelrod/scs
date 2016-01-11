@@ -8,6 +8,7 @@ find_package(catkin REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(BLAS REQUIRED)
 
+add_definitions(-DLAPACK_LIB_FOUND)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -174,6 +175,7 @@ target_link_libraries(scs_direct
 target_link_libraries(randomSOCPProb
     scs_indirect 
     ${catkin_LIBRARIES}
+    lapack
     )
 #############
 ## Install ##
